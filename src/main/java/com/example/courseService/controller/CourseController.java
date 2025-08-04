@@ -8,17 +8,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
     @RequestMapping("/course")
+
 @CrossOrigin(origins = "http://localhost:5173",
         methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE, RequestMethod.OPTIONS})
+
 public class CourseController {
+
     @Autowired
     private CourseService courseService;
+
 
         @GetMapping(path = "getAllCourse")
     public List<CourseModel> getAllCourse() {
@@ -49,8 +55,9 @@ public class CourseController {
 
     @GetMapping(path = "/ping")
     public String ping(){
-
             return "Server is running on port : " + port;
     }
+
+
 
 }
