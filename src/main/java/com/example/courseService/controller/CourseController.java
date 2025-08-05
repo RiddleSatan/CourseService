@@ -17,8 +17,7 @@ import java.util.Optional;
 @RestController
     @RequestMapping("/course")
 
-@CrossOrigin(origins = "http://localhost:5173",
-        methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE, RequestMethod.OPTIONS})
+@CrossOrigin
 
 public class CourseController {
 
